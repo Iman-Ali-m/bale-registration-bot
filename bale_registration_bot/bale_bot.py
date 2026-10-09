@@ -295,9 +295,7 @@ class BaleBot:
             return
         if data in COURSES:
             course=COURSES[data]
-            # ⬅️ حذف دکمه‌های شیشه‌ای
             await self.edit_message(query.chat_id,query.message_id,course["title"])
-            # ارسال عکس و متن
             if course["photos"]:
                 await self.send_media_group(query.chat_id,course["photos"],course["caption"])
             else:
